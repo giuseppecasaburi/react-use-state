@@ -15,7 +15,7 @@ function TypeOfLanguages ( {languages} ) {
     return (
       <div className="nav-button">
         {newArrayTypeOf.map((currTitle, index) => (
-          <button key={index} className={`badge rounded-pill mx-1 p-2 ${currTitle}`}>{currTitle}</button>
+          <button key={index} className={`badge rounded-pill mx-1 p-2 text-bg-primary`}>{currTitle}</button>
         ))}
   
       </div>
