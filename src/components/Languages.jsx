@@ -1,6 +1,6 @@
 import languages from "../data/languages";
 
-function TypeOfLanguages ( {languages} ) {
+function TypeOfLanguages ( {languages, setSelectLanguage} ) {
 
     const newArrayTypeOf = [];
   
@@ -11,15 +11,19 @@ function TypeOfLanguages ( {languages} ) {
       
       
     });
-  
+
     return (
       <div className="nav-button">
-        {newArrayTypeOf.map((currTitle, index) => (
-          <button key={index} className={`badge rounded-pill mx-1 p-2 text-bg-primary`}>{currTitle}</button>
-        ))}
-  
+        {newArrayTypeOf.map((currTitle, index) => {
+          const currLanguage = languages.find(lang => lang.title === currTitle);
+          return (
+            <button key={index} className="badge rounded-pill mx-1 p-2 text-bg-primary" onClick={() => setSelectLanguage(currLanguage)}>
+              {currTitle}
+            </button>
+          );
+        })}
       </div>
-    )
+    );
   }
 
 export default TypeOfLanguages;
